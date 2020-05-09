@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 CommitMessage="Changed Something"
 
 if [ $1 ];then
