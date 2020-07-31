@@ -4,10 +4,10 @@ colorscheme focuspoint
 set background=dark
 set t_Co=256
 
-set laststatus=2
-set noshowmode
-set encoding=utf8
-let g:airline_powerline_fonts = 1
+"set laststatus=2
+"set noshowmode
+"set encoding=utf8
+"let g:airline_powerline_fonts = 1
 
 set expandtab
 set tabstop=4
@@ -30,8 +30,9 @@ inoremap body<CR> <body><CR></body><ESC>O<TAB>
 inoremap input<CR> <input type="" id="" name=""><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 inoremap doid<CR> document.getElementById("")<left><left>
 inoremap docl<CR> document.getElementsByClassName("")<left><left>
-inoremap basic<CR> <!DOCTYPE html><CR><html> <CR><BS><head><CR><meta charset="UTF-8"><CR><meta name="viewport" content="width=device-width, initial-scale=1.0"><CR><title>Page Title</title><CR><script src=""></script><CR></head><CR><CR><body><CR></body><CR></html><UP><UP>
+"inoremap basic<CR> <!DOCTYPE html><CR><html> <CR><BS><head><CR><meta charset="UTF-8"><CR><meta name="viewport" content="width=device-width, initial-scale=1.0"><CR><title>Page Title</title><CR><script src=""></script><CR></head><CR><CR><body><CR></body><CR></html><UP><UP>
 
+" Converting 2 to 4 spaces
 command! -nargs=0 -range Ret <line1>,<line2>s/\v%(^ *)@<= {2}/\t/g
 
 call plug#begin("~/.vim/plugged")
@@ -40,27 +41,29 @@ call plug#begin("~/.vim/plugged")
     Plug 'akz92/vim-ionic2'
     Plug 'mxw/vim-jsx'
     Plug 'pangloss/vim-javascript'
-    Plug 'itchyny/lightline.vim'
+"    Plug 'itchyny/lightline.vim'
+"    Plug 'stevearc/vim-arduino'
+    Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
-let g:lightline = {
-       \ 'active': {
-       \   'left': [ [ 'mode', 'paste' ],
-       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-       \ },
-       \ 'component': {
-       \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
-       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-       \   'fugitive': '%{exists("*fugitive#head")?" ".fugitive#head():""}'
-       \ },
-       \ 'component_visible_condition': {
-       \   'readonly': '(&filetype!="help"&& &readonly)',
-       \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-       \ },
-       \ 'separator': { 'left': '', 'right': '' },
-       \ 'subseparator': { 'left': '', 'right': '' }
-       \ } 
+"let g:lightline = {
+"       \ 'active': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+"       \ },
+"       \ 'component': {
+"       \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
+"       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+"       \   'fugitive': '%{exists("*fugitive#head")?" ".fugitive#head():""}'
+"       \ },
+"       \ 'component_visible_condition': {
+"       \   'readonly': '(&filetype!="help"&& &readonly)',
+"       \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+"       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+"       \ },
+"       \ 'separator': { 'left': '', 'right': '' },
+"       \ 'subseparator': { 'left': '', 'right': '' }
+"       \ } 
 
 " Intelligent tab completion
 inoremap <silent> <Tab> <C-r>=<SID>InsertTabWrapper(1)<CR>
