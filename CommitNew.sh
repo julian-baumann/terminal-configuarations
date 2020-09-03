@@ -9,6 +9,7 @@ fi
 cp ~/.vimrc .
 cp ~/.zshrc .
 cp ~/.tmux.conf .
+cp ~/.vim .
 
 git add .
 git commit -m "$CommitMessage"
