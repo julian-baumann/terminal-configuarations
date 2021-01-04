@@ -11,8 +11,9 @@ cp ~/.zshrc .
 cp ~/.tmux.conf .
 
 sudo rm -r .vim
-sudo cp -r ~/.vim/colors .
-sudo cp -r ~/.vim/autoload .
+mkdir .vim
+sudo cp -r ~/.vim/colors .vim/
+sudo cp -r ~/.vim/autoload .vim/
 
 git add .
 git commit -m "$CommitMessage"
