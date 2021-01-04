@@ -2,7 +2,7 @@
 
 CommitMessage="Changed Something"
 
-if [ $1 ];then
+if [ "$1" ];then
     CommitMessage=$1
 fi
 
