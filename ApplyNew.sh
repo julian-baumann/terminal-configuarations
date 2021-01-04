@@ -1,10 +1,11 @@
 #!/bin/bash
 
-mkdir ~/BackupTerminalConfig
-mv ~/.zshrc ~/BackupTerminalConfig/
-mv ~/.vimrc ~/BackupTerminalConfig/
-mv ~/.tmux.conf ~/BackupTerminalConfig/
-#mv ~/.vim ~/BackupTerminalConfig
+sudo rm -r .TerminalBackup
+mkdir .TerminalBackup
+cp ~/.zshrc .TerminalBackup/
+cp ~/.vimrc .TerminalBackup/
+cp ~/.tmux.conf .TerminalBackup/
+cp -r ~/.vim .TerminalBackup/
 
 cp .zshrc ~/
 cp .vimrc ~/
