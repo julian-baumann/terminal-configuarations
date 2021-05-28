@@ -1,4 +1,4 @@
-source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PS1="%F{cyan}%1d%F{blue} >%f "
 
 setopt histignoredups
@@ -38,6 +38,10 @@ else
     alias ls="ls --color";
     alias l="ls -Fa --color";
     alias lsa="ls -la --color";
+    alias open="xdg-open";
+    export PATH=/home/julianbaumann/Bins:$PATH
+    bindkey "^[[1;3C" forward-word
+    bindkey "^[[1;3D" backward-word
 fi
 
 
