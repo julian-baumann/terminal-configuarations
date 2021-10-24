@@ -1,4 +1,4 @@
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PS1="%F{cyan}%1d%F{blue} >%f "
 
 setopt histignoredups
