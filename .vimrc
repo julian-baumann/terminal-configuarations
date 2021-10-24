@@ -49,7 +49,6 @@ function! <SID>InsertTabWrapper(direction)
     endif
 endfunction
 
-
 " For tmux
 if &term =~ '^screen'
     execute "set <xUp>=\e[1;*A"

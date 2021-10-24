@@ -7,39 +7,23 @@ if [[ `uname` == "Darwin" ]]; then
     alias ls="ls -G";
     alias l="ls -Fa -G";
     alias lsa="ls -la -G";
-    alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
-    alias pmts-server="/Applications/PMTS-Server.app/Contents/MacOS/PMTS-Server"
-    alias code="code-insiders"
     alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox"   
 
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
-            . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
-        else
-            export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
-
+    export PATH=$PATH:~/Bin
     export PATH="/opt/homebrew/bin:$PATH"
-#    export NVM_DIR="$HOME/.nvm"
-#    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-#    alias python3.9="/opt/homebrew/Caskroom/miniforge/base/bin/python"
-#    alias pip3.9="/opt/homebrew/Caskroom/miniforge/base/bin/pip"
-#    export NODE_PATH=$NODE_PATH:`npm root -g`
-#    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+    export PATH="/Users/turingmachine/Projects/qemu/build:$PATH"
+    export PATH="$PATH:/Users/turingmachine/.dotnet/tools"
+
+    export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+    export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+    export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+    export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 else
     alias ls="ls --color";
     alias l="ls -Fa --color";
     alias lsa="ls -la --color";
+    alias open="xdg-open";
+    export PATH=/home/julianbaumann/Bins:$PATH
+    bindkey "^[[1;3C" forward-word
+    bindkey "^[[1;3D" backward-word
 fi
-
-
-
-
