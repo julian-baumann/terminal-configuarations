@@ -10,10 +10,10 @@ cp ~/.vimrc .
 cp ~/.zshrc .
 cp ~/.tmux.conf .
 
-sudo rm -r .vim
+rm -rf .vim
 mkdir .vim
-sudo cp -r ~/.vim/colors .vim/
-sudo cp -r ~/.vim/autoload .vim/
+cp -rf ~/.vim/colors .vim/
+cp -rf ~/.vim/autoload .vim/
 
 git add .
 git commit -m "$CommitMessage"
