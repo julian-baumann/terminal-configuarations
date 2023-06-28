@@ -1,5 +1,17 @@
-Install everything on the new system with the ApplyNew.sh script.
+# Terminal configuration files
 
-Open vim and run :PlugInstall
+## Install
+```zsh
+./install.sh
+```
 
-ZSH Syntax Highlighting: [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+## Update local configuration
+```zsh
+./update-local-config.sh
+```
+
+## Upload current local changes to GitHub
+```zsh
+./upload-local-config.sh
+```
+
