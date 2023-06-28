@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CommitMessage="Changed Something"
+CommitMessage="Changed something"
 
 if [ "$1" ];then
     CommitMessage=$1
